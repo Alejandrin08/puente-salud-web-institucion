@@ -1,0 +1,113 @@
+/* Puente Salud · tokens de diseño (dirección «Arco nocturno").
+   Fuente única: design/brand/tokens.css. Se copia a src/shared/ui/tokens.css de cada frontend. */
+:root {
+  /* Marca */
+  --brand-blue: #1B5E9E;
+  --brand-teal: #8ED3C7;
+  --brand-gold: #F4B942;
+  --brand-navy: #13233F;
+
+  /* Superficies y texto */
+  --color-bg: #F7F4EE;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #EFEBE3;
+  --color-night: #13233F;
+  --color-night-2: #1E3354;
+  --color-text: #13233F;
+  --color-text-muted: #4A5568;
+  --color-text-on-night: #F7F4EE;
+  --color-text-on-night-muted: #C9D6E8;
+  --color-border: #7D828B;
+  --color-border-subtle: #DDD7CC;
+
+  /* Acciones */
+  --color-primary: #1B5E9E;
+  --color-primary-hover: #154C82;
+  --color-on-primary: #FFFFFF;
+  --color-focus: #1B5E9E;
+  --color-focus-on-night: #F4B942;
+
+  /* Arco de progreso (sobre noche) */
+  --arc-done: #8ED3C7;
+  --arc-current: #F4B942;
+  --arc-pending: #7C8BA3;
+  --arc-on-current: #13233F;
+
+  /* Semáforo: siempre con ícono y texto */
+  --sem-verde: #1B6E47;
+  --sem-verde-bg: #E3F2EA;
+  --sem-amarillo: #8A5A00;
+  --sem-amarillo-bg: #FBF0D6;
+  --sem-rojo: #B3261E;
+  --sem-rojo-bg: #FBE4E2;
+  --sem-gris: #5F6368;
+  --sem-gris-bg: #ECECEC;
+
+  /* Etiqueta de datos simulados */
+  --color-sim: #6B4E00;
+  --color-sim-bg: #FFF4D1;
+
+  /* Gráficos: 5 categorías (programas), cada una ≥3:1 sobre blanco */
+  --chart-1: #1B5E9E;
+  --chart-2: #2B7A6F;
+  --chart-3: #9A6A08;
+  --chart-4: #6B4FA0;
+  --chart-5: #13233F;
+  --chart-grid: #DDD7CC;
+  --chart-meta: #1B6E47;
+
+  /* Mapas: escala secuencial cividis (apta para daltonismo), de menor a mayor */
+  --mapa-1: #FDE945;
+  --mapa-2: #C9B868;
+  --mapa-3: #949077;
+  --mapa-4: #606A73;
+  --mapa-5: #2A4570;
+  --mapa-sin-dato: #E4E1DA;
+
+  /* Tipografía */
+  --font-display: "Bricolage Grotesque", "Atkinson Hyperlegible Next", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible Next", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-md: 1.0625rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.625rem;
+  --fs-2xl: 2.125rem;
+  --fs-3xl: 2.75rem;
+  --lh-tight: 1.15;
+  --lh-body: 1.55;
+
+  /* Espaciado (base 4) */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+
+  /* Forma y elevación */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+  --elev-1: 0 1px 2px rgb(19 35 63 / 0.06), 0 1px 3px rgb(19 35 63 / 0.08);
+  --elev-2: 0 4px 12px rgb(19 35 63 / 0.10);
+  --touch: 48px;
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 140ms;
+  --dur-med: 240ms;
+  --dur-slow: 700ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-med: 0ms;
+    --dur-slow: 0ms;
+  }
+}

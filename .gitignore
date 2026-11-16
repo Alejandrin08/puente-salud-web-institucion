@@ -1,0 +1,29 @@
+# Dependencias y compilación
+node_modules/
+dist/
+build/
+.vite/
+
+# Entorno y secretos
+.env
+.env.*
+!.env.example
+
+# Registros
+npm-debug.log*
+*.log
+
+# Sistema y editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Playwright
+test-results/
+playwright-report/
+
+# Capturas de revisión visual y artefactos de compilación
+.impeccable/review/
+.impeccable/mocks/
+*.tsbuildinfo
