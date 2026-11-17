@@ -1,10 +1,18 @@
+<p>
+  <img src="assets/gob2025_los_3.png" alt="Gobierno de Jalisco, COECYTJAL e Innovación, Ciencia y Tecnología" height="56" align="left" />
+  <img src="assets/solacyt_.png" alt="SOLACYT, Sociedad Latinoamericana de Ciencia y Tecnología" height="72" align="right" />
+</p>
+<br clear="both" />
+
 <p align="center"><img src="public/logo.svg" alt="Logo de Puente Salud" width="72" /></p>
 
 # Puente Salud · panel institucional
 
-Panel web (escritorio primero, utilizable en tableta) con **un solo sistema y dos roles**: `personal_salud` y `autoridad`. Las rutas se protegen por rol en el frontend y el gateway vuelve a comprobar el rol en cada petición. Las instrucciones completas están en el [README principal del backend](../puente-salud-backend/README.md).
+Panel web (escritorio primero, utilizable en tableta) con **un solo sistema y dos roles**: `personal_salud` y `autoridad`. Las rutas se protegen por rol en el frontend y el gateway vuelve a comprobar el rol en cada petición. Las instrucciones completas están en el [README principal del backend](https://github.com/Alejandrin08/puente-salud-backend#readme).
 
 **En línea:** [puente-salud-web-institucion.vercel.app](https://puente-salud-web-institucion.vercel.app) (cuentas de demostración abajo). La API está en [gateway-production-bb185c96.up.railway.app](https://gateway-production-bb185c96.up.railway.app/docs).
+
+Investigación que sustenta el proyecto: [`docs/investigacion.md`](docs/investigacion.md).
 
 ## Pantallas
 | Rol | Pantalla | Ruta |
