@@ -185,3 +185,51 @@ export type Mortalidad = {
   fuente: string
   nota: string
 }
+
+export type MedicamentoFila = {
+  medicamento: string
+  enfermedad: string
+  personas_tratamiento: number
+  surtido_completo_pct: number | null
+  recetas_12m: number
+  sin_cobertura: number
+  sin_cobertura_rojo: number
+  sin_cobertura_amarillo: number
+  necesidad_mensual_tabletas: number
+  faltante_mensual_tabletas: number
+}
+
+export type MedicamentoUnidad = {
+  clues: string
+  nombre: string
+  institucion: string
+  personas_tratamiento: number
+  surtido_completo_pct: number | null
+  sin_cobertura: number
+  sin_cobertura_rojo: number
+  sin_cobertura_amarillo: number
+  prioridad: number
+  medicamentos_faltantes: { medicamento: string; personas: number }[]
+}
+
+export type Medicamentos = {
+  fecha_corte: string
+  resumen: {
+    recetas_12m: number
+    surtido_completo_pct: number | null
+    recetas_incompletas_12m: number
+    personas_tratamiento: number
+    personas_sin_cobertura: number
+    sin_cobertura_por_nivel: Record<'rojo' | 'amarillo' | 'gris' | 'verde', number>
+  }
+  medicamentos: MedicamentoFila[]
+  unidades: MedicamentoUnidad[]
+  evolucion: { mes: string; surtido_completo_pct: number | null; recetas: number }[]
+  definiciones: Record<string, string>
+}
+
+export type ReferenciaSurtido = {
+  filas: { periodo: string; ambito: 'nacional' | 'estatal' | 'unidad'; nombre: string; clues: string | null; unidades: number; recetas: number; completas_pct: number; parciales_pct: number; negadas_pct: number }[]
+  fuente: string
+  nota: string
+}

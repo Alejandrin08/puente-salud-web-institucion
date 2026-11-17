@@ -58,20 +58,21 @@ test('personal de salud: lista ordenada, recorrido explicado, desacuerdo, medici
   // registrar medición con vista previa
   await page.getByRole('button', { name: 'Registrar medición' }).click()
   await expect(page.getByRole('heading', { name: 'Registrar medición' })).toBeVisible()
-  const pas = page.getByLabel('Sistólica (mmHg)')
-  const glu = page.getByLabel('Glucosa en ayuno (mg/dl)')
+  await expect(page.getByRole('heading', { name: /Paso 1: Persona/ })).toBeVisible()
+  const pas = page.getByLabel('Sistólica', { exact: true })
   if (await pas.count()) {
     await pas.fill('150')
     await expect(page.getByText('Captura sistólica y diastólica.')).toBeVisible()
-    await expect(page.getByRole('button', { name: 'Guardar medición y consulta' })).toBeDisabled()
-    await page.getByLabel('Diastólica (mmHg)').fill('95')
+    await expect(page.getByRole('button', { name: 'Guardar medición' })).toBeDisabled()
+    await page.getByLabel('Diastólica', { exact: true }).fill('95')
   } else {
-    await glu.fill('150')
+    await page.getByLabel('Glucosa en ayuno').fill('150')
   }
+  await page.getByLabel('Programa y lugar').selectOption('ferias')
   await expect(page.getByText(/fuera de meta/).first()).toBeVisible()
   await sinViolacionesGraves(page, 'medicion')
-  await page.getByRole('button', { name: 'Guardar medición y consulta' }).click()
-  await expect(page.getByText('Medición guardada.')).toBeVisible()
+  await page.getByRole('button', { name: 'Guardar medición' }).click()
+  await expect(page.getByRole('heading', { name: 'Medición guardada' })).toBeVisible()
 
   // ruta de visitas
   await nav(page).getByRole('link', { name: 'Ruta de visitas' }).click()
@@ -86,6 +87,8 @@ test('personal de salud: lista ordenada, recorrido explicado, desacuerdo, medici
   await expect(page.locator('.resultados li').first()).toBeVisible()
 
   // ruta protegida por rol
+  await page.goto('/medicamentos')
+  await expect(page.getByText(/no tiene acceso a esta sección/)).toBeVisible()
   await page.goto('/panorama')
   await expect(page.getByText(/no tiene acceso a esta sección/)).toBeVisible()
 })
@@ -124,6 +127,18 @@ test('autoridad: panorama, zonas con mapa y mortalidad, comparativo y exportaci�
   await expect(page.getByRole('heading', { name: 'Permanencia en tratamiento' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Tiempo a la primera consulta' })).toBeVisible()
   await sinViolacionesGraves(page, 'comparativo')
+
+  // numeralia de medicamentos (informativa)
+  await nav(page).getByRole('link', { name: 'Medicamentos' }).click()
+  await expect(page.getByRole('heading', { name: 'Medicamentos', level: 1 })).toBeVisible()
+  await expect(page.getByText(/no tienen su medicamento cubierto hoy/)).toBeVisible()
+  await expect(page.getByRole('rowheader', { name: /Metformina 850 mg/ })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Dónde reforzar el abasto' })).toBeVisible()
+  await expect(page.getByRole('rowheader', { name: /San Martín de Las Flores/ })).toBeVisible()
+  await sinViolacionesGraves(page, 'medicamentos')
+  const medCsv = page.waitForEvent('download')
+  await page.getByRole('button', { name: 'Exportar CSV' }).click()
+  expect((await medCsv).suggestedFilename()).toBe('puente-salud-medicamentos.csv')
 
   // la autoridad no ve personas
   await page.goto('/seguimiento')

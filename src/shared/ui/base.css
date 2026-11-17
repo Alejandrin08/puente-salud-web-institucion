@@ -1421,3 +1421,369 @@ code {
 .definicion summary {
   min-height: 48px;
 }
+
+/* ===== Registrar medición: formulario por pasos ===== */
+.titulo-l--grande {
+  font-size: var(--fs-2xl);
+}
+
+.rejilla-medicion--pasos {
+  grid-template-columns: minmax(0, 1fr) 340px;
+}
+
+@media (max-width: 1100px) {
+  .rejilla-medicion--pasos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.formulario-pasos {
+  gap: var(--sp-5);
+  padding: var(--sp-6);
+  border-radius: var(--radius-lg);
+}
+
+.pasos-form {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.paso-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.paso-form__titulo {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font: 700 var(--fs-md) var(--font-display);
+}
+
+.paso-form__num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font: 800 var(--fs-xs) var(--font-display);
+  flex: none;
+}
+
+.persona-elegida {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--sp-4);
+  align-items: center;
+  padding: var(--sp-4);
+  border-radius: var(--radius-md);
+  background: var(--color-primary-bg);
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font: 800 var(--fs-sm) var(--font-display);
+}
+
+.persona-elegida__nombre {
+  font-weight: 700;
+  font-size: var(--fs-md);
+}
+
+.persona-elegida__datos {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.persona-elegida__cambiar {
+  font-weight: 700;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 var(--sp-2);
+}
+
+.tipos {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.tipo {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  border: 0;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: 700 var(--fs-sm) var(--font-body);
+  cursor: pointer;
+  transition: background-color var(--dur-fast) ease;
+}
+
+.tipo + .tipo {
+  border-left: 1px solid var(--color-border);
+}
+
+.tipo[aria-pressed='true'] {
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+}
+
+.tipo:focus-visible {
+  outline-offset: -4px;
+}
+
+.valores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sp-4);
+}
+
+.valor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.valor label {
+  font-weight: 700;
+}
+
+.valor__caja {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  min-height: 64px;
+  padding: 0 var(--sp-4);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.valor__caja:focus-within {
+  border-color: var(--color-primary);
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.valor__caja input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  padding: var(--sp-3) 0;
+  font: 800 var(--fs-2xl) / 1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+  caret-color: var(--color-primary);
+}
+
+.valor__caja input:focus {
+  outline: none;
+}
+
+.valor__unidad {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.select-icono {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: 52px;
+  padding: 0 var(--sp-3);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+}
+
+.select-icono:focus-within {
+  border-color: var(--color-primary);
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.select-icono .icono {
+  color: var(--color-text-muted);
+  flex: none;
+}
+
+.select-icono select,
+.select-icono input {
+  flex: 1;
+  min-width: 0;
+  min-height: 48px;
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  font: 600 var(--fs-sm) var(--font-body);
+}
+
+.select-icono select:focus,
+.select-icono input:focus {
+  outline: none;
+}
+
+/* Panel noche: vista previa del semáforo */
+.panel-noche {
+  background: var(--color-night);
+  color: var(--color-text-on-night);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.panel-noche__titulo {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font: 700 var(--fs-md) var(--font-display);
+}
+
+.panel-noche__titulo .icono {
+  color: var(--brand-gold);
+}
+
+.panel-noche__nivel {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+  color: var(--color-text-on-night-muted);
+}
+
+.panel-noche__apoyo {
+  color: var(--color-text-on-night-muted);
+}
+
+.panel-noche__nota {
+  display: flex;
+  gap: var(--sp-2);
+  align-items: flex-start;
+  padding: var(--sp-3);
+  border-radius: var(--radius-md);
+  background: var(--color-night-2);
+  color: var(--color-text-on-night-muted);
+  font-size: var(--fs-xs);
+}
+
+.panel-noche__nota .icono {
+  flex: none;
+  margin-top: 2px;
+}
+
+.panel-noche__enlace {
+  color: var(--color-text-on-night);
+  font-weight: 700;
+}
+
+.previa {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.titulo-con-icono {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.titulo-con-icono .icono {
+  color: var(--color-primary);
+}
+
+.recibidas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.recibidas li {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: var(--sp-3);
+  align-items: start;
+}
+
+.recibidas__marca {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  background: var(--sem-verde-bg);
+  color: var(--sem-verde);
+}
+
+.recibidas__titulo {
+  font-weight: 700;
+}
+
+/* ===== Medicamentos ===== */
+.sin-cobertura {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  margin-top: var(--sp-1);
+  font-size: var(--fs-xs);
+  flex-wrap: wrap;
+}
+
+.definicion--bloque {
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--elev-1);
+}
+
+.definicion--bloque ul {
+  margin: var(--sp-2) 0;
+  padding-left: var(--sp-5);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.definicion--bloque p {
+  max-width: 90ch;
+}
+
+.fila-simulada th,
+.fila-simulada td {
+  background: var(--color-sim-bg);
+  color: var(--color-sim);
+}
+
+.fila-simulada .sub {
+  color: var(--color-sim);
+}

@@ -23,6 +23,11 @@ const TRAZOS: Record<string, string> = {
   tablero: 'M4 20V10M10 20V4M16 20v-7M22 20H2',
   comparar: 'M4 7h10M4 12h16M4 17h7',
   buscar: 'M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM20 20l-4-4',
+  gota: 'M12 3.5s6 6.6 6 10.9a6 6 0 0 1-12 0C6 10.1 12 3.5 12 3.5z',
+  latido: 'M3 12h4l2-5 4 10 2-5h6',
+  sincronizar: 'M20 11a8 8 0 0 0-14.3-4.9L4 8M4 4v4h4M4 13a8 8 0 0 0 14.3 4.9L20 16m0 4v-4h-4',
+  pastilla: 'M10.5 20.5a5 5 0 0 1-7-7l6-6a5 5 0 0 1 7 7zM7 10l7 7',
+  chispa: 'M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z',
   escudo: 'M12 3.5 5 6v5.5c0 4.3 3 7.8 7 9 4-1.2 7-4.7 7-9V6zM9 12l2.2 2.2L15.5 10',
 }
 

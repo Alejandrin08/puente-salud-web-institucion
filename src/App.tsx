@@ -1,6 +1,7 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { BuscarFolio } from './pages/BuscarFolio'
 import { Comparativo } from './pages/Comparativo'
+import { Medicamentos } from './pages/Medicamentos'
 import { Entrar } from './pages/Entrar'
 import { Paciente } from './pages/Paciente'
 import { Panorama } from './pages/Panorama'
@@ -24,6 +25,7 @@ const RUTAS: Ruta[] = [
   { patron: /^\/panorama$/, rol: 'autoridad', titulo: 'Panorama', pagina: () => <Panorama /> },
   { patron: /^\/zonas$/, rol: 'autoridad', titulo: 'Resultados por zona', pagina: () => <Zonas /> },
   { patron: /^\/comparativo$/, rol: 'autoridad', titulo: 'Comparativo por programas', pagina: () => <Comparativo /> },
+  { patron: /^\/medicamentos$/, rol: 'autoridad', titulo: 'Medicamentos', pagina: () => <Medicamentos /> },
 ]
 
 const NAV: Record<Rol, { a: string; texto: string; icono: string }[]> = {
@@ -36,6 +38,7 @@ const NAV: Record<Rol, { a: string; texto: string; icono: string }[]> = {
     { a: '/panorama', texto: 'Panorama', icono: 'tablero' },
     { a: '/zonas', texto: 'Zonas y contexto', icono: 'mapa' },
     { a: '/comparativo', texto: 'Comparativo', icono: 'comparar' },
+    { a: '/medicamentos', texto: 'Medicamentos', icono: 'pastilla' },
   ],
 }
 const INICIO: Record<Rol, string> = { personal_salud: '/seguimiento', autoridad: '/panorama' }

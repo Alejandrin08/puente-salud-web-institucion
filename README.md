@@ -11,11 +11,12 @@ Panel web (escritorio primero, utilizable en tableta) con **un solo sistema y do
 |---|---|---|
 | Personal de salud | Seguimiento de pacientes (conteo por nivel, prioridades con motivo, agenda del día) | `/seguimiento` |
 | Personal de salud | Recorrido del paciente (semáforo explicado con fuente, desacuerdo, evolución, surtido, bitácora) | `/pacientes/:folio` |
-| Personal de salud | Registrar medición (vista previa contra la NOM, mediciones de otros programas) | `/medicion`, `/pacientes/:folio/medicion` |
+| Personal de salud | Registrar medición en 4 pasos (persona, tipo, valores, dónde y cuándo) con vista previa del semáforo y mediciones recibidas de otros programas | `/medicion`, `/pacientes/:folio/medicion` |
 | Personal de salud | Ruta de visitas (mapa, distancia en línea recta, tiempo aproximado) | `/ruta` |
 | Autoridad | Panorama (4 indicadores, resultado por programa, evolución del control) | `/panorama` |
 | Autoridad | Resultados por zona y contexto (mapa de 234 AGEB, capas, ranking, mortalidad) | `/zonas` |
 | Autoridad | Comparativo por programas (permanencia y tiempo a la primera consulta) | `/comparativo` |
+| Autoridad | Medicamentos (informativo): surtido completo, personas sin medicamento cubierto según el semáforo, necesidad mensual, dónde reforzar el abasto y referencia real del ISSSTE | `/medicamentos` |
 
 Todos los gráficos y mapas tienen alternativa en tabla («Ver tabla») y exportación CSV.
 
