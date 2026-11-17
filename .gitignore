@@ -24,6 +24,6 @@ test-results/
 playwright-report/
 
 # Capturas de revisión visual y artefactos de compilación
-.impeccable/review/
-.impeccable/mocks/
+.impeccable/
+capturas/
 *.tsbuildinfo

@@ -1,5 +1,5 @@
 /* Puente Salud · tokens de diseño (dirección «Arco nocturno").
-   Fuente única: design/brand/tokens.css. Se copia a src/shared/ui/tokens.css de cada frontend. */
+   Mismo archivo en ambos frontends (src/shared/ui/tokens.css): si cambias uno, copia el otro. */
 :root {
   /* Marca */
   --brand-blue: #1B5E9E;

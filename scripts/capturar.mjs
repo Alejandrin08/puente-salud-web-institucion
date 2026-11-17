@@ -3,7 +3,7 @@ import { chromium } from '@playwright/test'
 import { mkdirSync } from 'node:fs'
 
 const BASE = process.argv[2] ?? 'http://localhost:5174'
-const OUT = process.argv[3] ?? '.impeccable/review'
+const OUT = process.argv[3] ?? 'capturas'
 const ANCHO = Number(process.argv[4] ?? 1440)
 mkdirSync(OUT, { recursive: true })
 

@@ -37,4 +37,4 @@ npm run test:e2e     # Playwright + axe, con el sistema levantado
 ```
 
 ## Despliegue (Vercel)
-`VITE_API_URL` = URL pública del gateway. `vercel.json` reescribe las rutas de la SPA. Ver `docs/despliegue.md` en el backend.
+`VITE_API_URL` = URL pública del gateway. `vercel.json` reescribe las rutas de la SPA.
